@@ -37,13 +37,11 @@ RUN a2enmod rewrite
 
 # Configure /app folder with sample app
 RUN mkdir -p /app && rm -fr /var/www/html && ln -s /app /var/www/html
-RUN mkdir /moodledata
-RUN chmod 777 -R /moodledata
 
 ##Activando virtual hosts
 ADD vhost/* /etc/apache2/sites-available/
 RUN a2dissite 000-default.conf
-RUN a2ensite moodle-local.com.conf
+RUN a2ensite diegocampos.com.conf
 
 EXPOSE 80
 CMD ["/run.sh"]

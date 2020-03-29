@@ -10,7 +10,6 @@ services:
       - "80:80"
     volumes:
       - './www:/app:consistent'
-      - '~/moodledata/:/moodledata:consistent'
   db:
     image: mysql
     command: --default-authentication-plugin=mysql_native_password
