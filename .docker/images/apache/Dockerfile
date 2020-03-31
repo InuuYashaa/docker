@@ -31,7 +31,7 @@ ADD run.sh /run.sh
 RUN chmod 755 /*.sh
 ADD supervisord-apache2.conf /etc/supervisor/conf.d/supervisord-apache2.conf
 
-
+COPY php/php.ini /etc/php/7.1/apache2/php.ini
 ## Activando modulo
 RUN a2enmod rewrite
 
